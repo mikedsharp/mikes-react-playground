@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="js/react.development.js"></script>
+        <script src="js/react-dom.development.js"></script>
+    </head>
+    <body>
+        <div id="content"></div>
+        <script type="text/javascript">
+            class HelloWorld extends React.Component {
+                render () {
+                    return React.createElement('h1',
+                                                null,
+                                                `Hello ${this.props.frameworkName} world!!`)
+                }
+            }
+            ReactDOM.render(
+                React.createElement('div', 
+                                    null,
+                                    React.createElement(HelloWorld, {
+                                        id: 'ember',
+                                        frameworkName: 'ember.js',
+                                        title: 'something something framework'
+                                    }),
+                                    React.createElement(HelloWorld, {
+                                        id: 'backbone',
+                                        frameworkName: 'backbone.js',
+                                        title: 'something something framework 2'
+                                    }),
+                                    React.createElement(HelloWorld, {
+                                        id: 'angular',
+                                        frameworkName: 'angular.js',
+                                        title: 'something something framework 3'
+                                    })),
+                document.getElementById('content')
+            );
+        </script>
+    </body>
+</html>
